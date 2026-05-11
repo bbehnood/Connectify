@@ -1,11 +1,9 @@
 from fastapi import APIRouter, Depends, WebSocket, WebSocketDisconnect
-from typing import Dict, Any
 import uuid
 import json
 
 from app.core.websocket_manager import ConnectionManager, get_manager
 from app.schemas.chat import (
-    ReceivedMessage,
     ChatMessage,
     SystemMessage,
     SetUsernameMessage,
