@@ -1,11 +1,9 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
-from typing import Dict, Any
+from fastapi import APIRouter, Depends, WebSocket, WebSocketDisconnect
 import uuid
 import json
 
-from app.core.websocket_manager import manager
+from app.core.websocket_manager import ConnectionManager, get_manager
 from app.schemas.chat import (
-    ReceivedMessage,
     ChatMessage,
     SystemMessage,
     SetUsernameMessage,
@@ -16,7 +14,9 @@ router = APIRouter()
 
 
 @router.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
+async def websocket_endpoint(
+    websocket: WebSocket, manager: ConnectionManager = Depends(get_manager)
+):
     # Generate a unique ID for this connection
     connection_id = str(uuid.uuid4())
 

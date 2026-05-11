@@ -76,5 +76,5 @@ class ConnectionManager:
         return len(self.active_connections)
 
 
-# Instantiate the manager globally
-manager = ConnectionManager()
+def get_manager(websoket: WebSocket):
+    return websoket.app.state.connection_manager
