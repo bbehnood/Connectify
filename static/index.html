@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced FastAPI Chat</title>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="header">Real-Time Chat</div>
+
+        <div id="username-input-container">
+            <input type="text" id="usernameInput" placeholder="Enter your username..." />
+            <button onclick="setUsername()">Set Username</button>
+        </div>
+
+        <div id="chatbox">
+            <div class="system-message">Connecting...</div>
+        </div>
+
+        <div id="input-area">
+            <input type="text" id="messageInput" placeholder="Type your message..." disabled />
+            <button onclick="sendMessage()" disabled>Send</button>
+        </div>
+    </div>
+
+    <script src="static/index.js"></script>
+</body>
+</html>
+
