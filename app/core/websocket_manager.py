@@ -69,11 +69,11 @@ class ConnectionManager:
                 f"Attempted to set username for non-existent connection: {connection_id}"
             )
 
-        def get_username(self, connection_id: str) -> Optional[str]:
-            return self.user_connections.get(connection_id)
+    def get_username(self, connection_id: str) -> Optional[str]:
+        return self.user_connections.get(connection_id)
 
-        def get_connection_count(self) -> int:
-            return len(self.active_connections)
+    def get_connection_count(self) -> int:
+        return len(self.active_connections)
 
 
 # Instantiate the manager globally
